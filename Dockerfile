@@ -1,7 +1,9 @@
 FROM node:8-alpine
 
-COPY . /srv/
-WORKDIR /srv
+RUN mkdir -p /usr/src/app
+WORKDIR /usr/src/app
+
+COPY . /usr/src/app
 
 # --no-cache: download package index on-the-fly, no need to cleanup afterwards
 # --virtual: bundle packages, remove whole bundle at once, when done
@@ -12,4 +14,6 @@ RUN apk --no-cache --virtual build-dependencies add \
     && npm install \
     && apk del build-dependencies
 
-CMD /usr/local/bin/node app.js
+EXPOSE 3000
+
+ENTRYPOINT ["/usr/local/bin/npm", "start"]

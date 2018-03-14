@@ -1,14 +1,19 @@
 {
-  "name": "couchbase-docker",
+  "name": "nodejs-couchbase",
   "version": "1.0.0",
-  "description": "",
+  "description": "Run NodeJS with Docker",
   "main": "index.js",
   "scripts": {
+    "start": "node server/app.js",
     "test": "echo \"Error: no test specified\" && exit 1"
   },
-  "keywords": [],
-  "author": "",
-  "license": "ISC",
+  "repository": {
+    "type": "git",
+    "url": "https://github.com/gbrunois/nodejs-couchbase.git"
+  },
+  "keywords": ["nodejs", "couchbase", "docker"],
+  "author": "gbrunois",
+  "license": "Apache-2.0",
   "dependencies": {
     "body-parser": "^1.18.2",
     "couchbase": "2.4.5",
@@ -19,7 +24,6 @@
     "uuid": "^3.2.1"
   },
   "devDependencies": {
-    "prettier": "^1.11.1",
-    "prettierrc": "0.0.0-5"
+    "prettier": "^1.11.1"
   }
 }

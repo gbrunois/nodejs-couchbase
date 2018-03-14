@@ -2,7 +2,7 @@ version: '2'
 
 services:
     couchbase:
-        image: couchbase-custom
+        build: ./couchbase
         ports:
             - 8091:8091
             - 8092:8092
@@ -17,7 +17,9 @@ services:
             - COUCHBASE_BUCKET_PASSWORD=couchbase
 
     nodejs:
-        image: nodejs-custom
+        build: .
+        links:
+            - couchbase
         ports:
             - 3000:3000
         environment:
