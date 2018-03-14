@@ -14,6 +14,8 @@ RUN apk --no-cache --virtual build-dependencies add \
     && npm install \
     && apk del build-dependencies
 
+RUN npm run tsc
+
 EXPOSE 3000
 
 ENTRYPOINT ["/usr/local/bin/npm", "start"]

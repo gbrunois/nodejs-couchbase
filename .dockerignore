@@ -2,6 +2,7 @@
 node_modules
 couchbase
 scripts
+dist
 
 *.sh
 docker-compose.yml
